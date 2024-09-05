@@ -11,7 +11,8 @@
         "test": "ng test --watch=false --browsers=ChromeHeadlessCI --progress=false",
         "lint": "ng lint --fix",
         "extract-translations": "node scripts/extract-translations.js",
-        "ngcc": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
+        "ngcc": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+        "codegen": "graphql-codegen --config codegen.ts"
     },
     "homepage": "https://www.vendure.io/",
     "funding": "https://github.com/sponsors/michaelbromley",
@@ -88,7 +89,7 @@
         "@angular/cli": "^17.2.3",
         "@angular/compiler": "^17.2.4",
         "@angular/compiler-cli": "^17.2.4",
-        "@graphql-codegen/cli": "^5.0.2",
+        "@graphql-codegen/cli": "5.0.2",
         "@types/jasmine": "~4.3.5",
         "@types/jasminewd2": "~2.0.10",
         "@types/node": "^18.17.9",
@@ -113,6 +114,9 @@
         "ng-packagr": "17.2.1",
         "puppeteer": "^19.8.3",
         "rimraf": "^5.0.5",
-        "typescript": "^5.3.3"
+        "typescript": "^5.3.3",
+        "@graphql-codegen/typescript-apollo-angular": "4.0.0",
+        "@graphql-codegen/fragment-matcher": "5.0.2",
+        "@graphql-codegen/introspection": "4.0.3"
     }
 }
