@@ -22,3 +22,6 @@ During the init step, you'll be prompted to select various options about how to 
     Where is your schema?: Use http://localhost:3000/shop-api (unless you have configured a different GraphQL API URL)
     Where are your operations and fragments?: Use the appropriate glob pattern for you project. For example, src/**/*.{ts,tsx}.
     Select codegen.ts as the name of the config file.
+
+\!
+Codegen just generate code has extension file name like \*`test.graphql.ts`
