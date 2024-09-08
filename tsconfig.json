@@ -59,6 +59,10 @@
       ],
       "@vendure/admin-ui/system": [
         "./src/lib/system/src/public_api"
+      ],
+
+      "@vendure/admin-ui/blog": [
+        "./src/lib/blog/src/public_api"
       ]
     },
     "useDefineForClassFields": false
