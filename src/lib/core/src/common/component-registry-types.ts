@@ -95,7 +95,8 @@ export type PageLocationId =
   | "tax-rate-list"
   | "zone-detail"
   | "zone-list"
-  | "blog-list";
+  | "blog-list"
+  | "courtType-list";
 
 /**
  * @description

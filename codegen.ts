@@ -26,7 +26,7 @@ const config: CodegenConfig = {
     namingConvention: { enumValue: "keep" },
   },
   generates: {
-    "src/test/src/gql/": {
+    "src/lib/courtType/gql/": {
       preset: "client",
       documents: "src/lib/**/*.graphql.ts",
       presetConfig: {

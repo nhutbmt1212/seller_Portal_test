@@ -1,0 +1,54 @@
+<!-- <vdr-page-block>
+    <vdr-action-bar>
+        <vdr-ab-right>
+            <button class="btn btn-primary" *ngIf="isNew$ | async; else updateButton" (click)="create()"
+                [disabled]="!(detailForm.valid && detailForm.dirty)">
+                {{ "common.create" | translate }}
+            </button>
+            <ng-template #updateButton>
+                <button class="btn btn-primary" *vdrIfPermissions="'UpdateCourtCategory'" (click)="save()"
+                    [disabled]="(detailForm.invalid || detailForm.pristine) && !assetsChanged()">
+                    {{ "common.update" | translate }}
+                </button>
+            </ng-template>
+        </vdr-ab-right>
+    </vdr-action-bar>
+</vdr-page-block>
+
+<form class="form" [formGroup]="detailForm">
+    <vdr-page-detail-layout>
+        <vdr-page-detail-sidebar>
+            <vdr-card>
+                <vdr-form-field [label]="'catalog.visibility' | translate" for="visibility">
+                    <clr-toggle-wrapper>
+                        <input type="checkbox" clrToggle name="enabled" [formControl]="detailForm.get(['enabled'])" />
+                        <label>{{ 'common.enabled' | translate }}</label>
+                    </clr-toggle-wrapper>
+                </vdr-form-field>
+            </vdr-card>
+
+            <vdr-card *ngIf="entity$ | async as entity">
+                <vdr-page-entity-info [entity]="entity"></vdr-page-entity-info>
+            </vdr-card>
+        </vdr-page-detail-sidebar>
+        <div class="clr-row">
+            <div class="clr-col">
+                <vdr-page-block>
+                    <vdr-card>
+                        <div class="form-grid">
+                            <vdr-form-field [label]="'Name' | translate" for="name">
+                                <input id="name" type="text" formControlName="name" />
+                            </vdr-form-field>
+                            <vdr-form-field [label]="'Slug' | translate" for="slug">
+                                <input id="slug" type="text" formControlName="slug" />
+                            </vdr-form-field>
+                            <vdr-rich-text-editor formControlName="description" class="form-grid-span"
+                                [label]="'Description' | translate">
+                            </vdr-rich-text-editor>
+                        </div>
+                    </vdr-card>
+                </vdr-page-block>
+            </div>
+        </div>
+    </vdr-page-detail-layout>
+</form> -->

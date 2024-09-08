@@ -63,6 +63,10 @@
 
       "@vendure/admin-ui/blog": [
         "./src/lib/blog/src/public_api"
+      ],
+      
+      "@vendure/admin-ui/courtType": [
+        "./src/lib/courtType/src/public_api"
       ]
     },
     "useDefineForClassFields": false

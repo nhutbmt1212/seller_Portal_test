@@ -352,6 +352,20 @@ export class BaseNavComponent implements OnInit, OnDestroy {
           },
         ],
       },
+      {
+        id: "courtType",
+        label: _("courtType"),
+        requiresPermission: allow(Permission.ReadPromotion),
+        items: [
+          {
+            requiresPermission: allow(Permission.ReadPromotion),
+            id: "courtType",
+            label: _("courtType"),
+            routerLink: ["/courtType", "courtTypes"],
+            icon: "asterisk",
+          },
+        ],
+      },
     ]);
   }
 

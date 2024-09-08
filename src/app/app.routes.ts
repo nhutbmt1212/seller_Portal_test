@@ -58,6 +58,11 @@ export const routes: Route[] = [
         loadChildren: () =>
           import("@vendure/admin-ui/blog").then((m) => m.BlogModule),
       },
+      {
+        path: "courtType",
+        loadChildren: () =>
+          import("@vendure/admin-ui/courtType").then((m) => m.CourtTypeModule),
+      },
     ],
   },
 ];
