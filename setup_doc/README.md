@@ -25,3 +25,6 @@ During the init step, you'll be prompted to select various options about how to 
 
 \!
 Codegen just generate code has extension file name like \*`test.graphql.ts`
+
+\!
+customize navbar at here: `base-nav.component.ts`

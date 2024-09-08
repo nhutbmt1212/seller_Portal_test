@@ -10,6 +10,6 @@ export const createRoutesBlog = (pageService: PageService): Route[] => [
       locationId: "blog-list",
       breadcrumb: "blog-list",
     },
-    children: pageService.getPageTabRoutes("product-list"),
+    children: pageService.getPageTabRoutes("blog-list"),
   },
 ];
