@@ -21,7 +21,8 @@ const MODULES = [
     'settings',
     'system',
     'react',
-    'blog'
+    'blog',
+    'courtType'
 ];
 
 for (const moduleDir of MODULES) {

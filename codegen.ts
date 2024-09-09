@@ -26,14 +26,14 @@ const config: CodegenConfig = {
     namingConvention: { enumValue: "keep" },
   },
   generates: {
-    "src/lib/courtType/gql/": {
+    "src/lib/courtType/src/gql/": {
       preset: "client",
       documents: "src/lib/**/*.graphql.ts",
       presetConfig: {
         frameElement: false,
       },
     },
-    "src/gql/generated.ts": {
+    "src/lib/courtType/src/gql/generated.ts": {
       plugins: ["typescript"],
     },
   },

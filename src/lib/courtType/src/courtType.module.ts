@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, ROUTES } from "@angular/router";
 import {
+  BulkActionRegistryService,
   detailComponentWithResolver,
   PageService,
   SharedModule,
@@ -11,6 +12,7 @@ import { CourtTypeListComponent } from "./components/courtType-list/courtType-li
 import { CourtTypeDetailComponent } from "./components/courtType-detail/courtType-detail.component";
 import { GET_COURT_TYPE } from "./components/courtType-detail/courtType-detail.graphql";
 import { GetCourtTypeDocument } from "../gql/graphql";
+import { deleteCustomersBulkAction } from "src/lib/customer/src/components/customer-list/customer-list-bulk-actions";
 
 @NgModule({
   imports: [SharedModule, RouterModule.forChild([])],
@@ -24,12 +26,20 @@ import { GetCourtTypeDocument } from "../gql/graphql";
     },
   ],
 
-  declarations: [
-    //
-  ],
+  declarations: [CourtTypeDetailComponent, CourtTypeListComponent],
 })
 export class CourtTypeModule {
-  constructor(pageService: PageService) {
+  private static hasRegisteredTabsAndBulkActions = false;
+
+  constructor(
+    pageService: PageService,
+    bulkActionRegistryService: BulkActionRegistryService
+  ) {
+    if (CourtTypeModule.hasRegisteredTabsAndBulkActions) {
+      return;
+    }
+    bulkActionRegistryService.registerBulkAction(deleteCustomersBulkAction);
+
     pageService.registerPageTab({
       priority: 0,
       location: "courtType-list",
@@ -40,27 +50,22 @@ export class CourtTypeModule {
     pageService.registerPageTab({
       priority: 0,
       location: "courtType-detail",
-      tab: _("courtTypeDetail"),
+      tab: _("customer.customer-group"),
       route: "",
       component: detailComponentWithResolver({
         component: CourtTypeDetailComponent,
         query: GetCourtTypeDocument,
         entityKey: "getCourtType",
-        getBreadcrumbs: (entity: any) => {
-          const entityId = entity && entity.id ? entity.id : "Create";
-          console.log(entity);
-          return [
-            {
-              label: "courtType",
-              link: ["/courtType", "courtTypes"],
-            },
-            {
-              label: entityId,
-              link: [],
-            },
-          ];
-        },
+        getBreadcrumbs: (entity) => [
+          {
+            label: entity
+              ? entity.name
+              : _("customer.create-new-customer-group"),
+            link: [entity?.id],
+          },
+        ],
       }),
     });
+    CourtTypeModule.hasRegisteredTabsAndBulkActions = true;
   }
 }

@@ -1,5 +1,5 @@
 import { Route } from "@angular/router";
-import { PageService } from "@vendure/admin-ui/core";
+import { PageComponent, PageService } from "@vendure/admin-ui/core";
 import { marker as _ } from "@biesbjerg/ngx-translate-extract-marker";
 
 import { CourtTypeListComponent } from "./components/courtType-list/courtType-list.component";
@@ -19,9 +19,9 @@ export const createRoutesCourtType = (pageService: PageService): Route[] => [
   },
   {
     path: ":id",
-    component: CourtTypeDetailComponent,
+    component: PageComponent,
     data: {
-      locationId: "courtTypeDetail",
+      locationId: "courtType-detail",
       breadcrumb: { label: _("courtTypes"), link: ["../", "courtTypes"] },
     },
     children: pageService.getPageTabRoutes("courtType-detail"),

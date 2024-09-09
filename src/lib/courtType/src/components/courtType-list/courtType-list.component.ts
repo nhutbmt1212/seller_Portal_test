@@ -17,8 +17,6 @@ import { GetAllCourtTypeDocument } from "src/lib/courtType/gql/graphql";
   templateUrl: "./courtType-list.component.html",
   styleUrls: ["./courtType-list.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [SharedModule],
 })
 export class CourtTypeListComponent extends TypedBaseListComponent<
   typeof GetAllCourtTypeDocument,

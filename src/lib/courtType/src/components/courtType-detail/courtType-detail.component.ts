@@ -4,7 +4,6 @@ import {
   Component,
   OnInit,
   OnChanges,
-  NgModule,
 } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {
@@ -12,7 +11,6 @@ import {
   DataService,
   LanguageCode,
   NotificationService,
-  SharedModule,
   TypedBaseDetailComponent,
 } from "@vendure/admin-ui/core";
 import { Observable, of } from "rxjs";
@@ -23,9 +21,13 @@ import {
   GET_COURT_TYPE,
   UPDATE_COURT_TYPE,
 } from "./courtType-detail.graphql";
-import { slugify } from "src/lib/courtType/helpers";
-import { CreateCourtType, UpdateCourtType } from "src/gql/generated";
-import { GetCourtTypeQuery } from "src/lib/courtType/gql/graphql";
+import { slugify } from "src/lib/courtType/src/helpers";
+import {
+  CreateCourtType,
+  GetCourtTypeDocument,
+  GetCourtTypeQuery,
+  UpdateCourtType,
+} from "src/lib/courtType/gql/graphql";
 export interface SelectedAssets {
   assets?: Asset[];
   featuredAsset?: Asset;
@@ -35,12 +37,10 @@ export interface SelectedAssets {
   selector: "vdr-courttype-detail",
   templateUrl: "./courtType-detail.component.html",
   styleUrls: ["./courtType-detail.component.scss"],
-  changeDetection: ChangeDetectionStrategy.Default,
-  standalone: true,
-  imports: [SharedModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourtTypeDetailComponent
-  extends TypedBaseDetailComponent<typeof GET_COURT_TYPE, "getCourtType">
+  extends TypedBaseDetailComponent<typeof GetCourtTypeDocument, "getCourtType">
   implements OnInit, OnChanges
 {
   detailForm: FormGroup;
@@ -168,12 +168,16 @@ export class CourtTypeDetailComponent
     }
   }
 
-  protected setFormValues(entity: any): void {
-    this.detailForm.patchValue({
-      name: entity?.name,
-      slug: entity?.slug,
-      description: entity?.description,
-      enabled: entity?.enabled,
-    });
+  protected setFormValues(entity: any, languageCode: LanguageCode): void {
+    console.log(entity);
+
+    if (entity) {
+      this.detailForm.patchValue({
+        name: entity.name,
+        slug: entity.slug,
+        description: entity.description,
+        enabled: entity.enabled,
+      });
+    }
   }
 }
