@@ -96,7 +96,8 @@ export type PageLocationId =
   | "zone-detail"
   | "zone-list"
   | "blog-list"
-  | "courtType-list";
+  | "courtType-list"
+  | "courtType-detail";
 
 /**
  * @description

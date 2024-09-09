@@ -59,7 +59,7 @@ export const routes: Route[] = [
           import("@vendure/admin-ui/blog").then((m) => m.BlogModule),
       },
       {
-        path: "courtType",
+        path: "courtTypes",
         loadChildren: () =>
           import("@vendure/admin-ui/courtType").then((m) => m.CourtTypeModule),
       },

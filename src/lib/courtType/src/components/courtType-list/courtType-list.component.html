@@ -25,7 +25,7 @@
 
     <vdr-dt2-column heading="Name" [optional]="false" [sort]="sorts.get('name')">
         <ng-template let-item="item">
-            <a class="button-ghost" [routerLink]="['/extensions', 'courtcategories', item.id]">
+            <a class="button-ghost" [routerLink]="['/courtTypes', item.id]">
                 {{ item.name }}
                 <clr-icon shape="arrow right"></clr-icon>
             </a>
