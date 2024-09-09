@@ -10,7 +10,7 @@ import {
 } from "@vendure/admin-ui/core";
 import { EMPTY } from "rxjs";
 import { delay, switchMap } from "rxjs/operators";
-import { GetAllCourtTypeDocument } from "src/lib/courtType/gql/graphql";
+import { GetAllCourtTypeDocument } from "src/lib/courtType/src/gql/graphql";
 
 @Component({
   selector: "vdr-court-category-list",

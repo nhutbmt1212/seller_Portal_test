@@ -10,9 +10,8 @@ import { marker as _ } from "@biesbjerg/ngx-translate-extract-marker";
 import { createRoutesCourtType } from "./courtType.routes";
 import { CourtTypeListComponent } from "./components/courtType-list/courtType-list.component";
 import { CourtTypeDetailComponent } from "./components/courtType-detail/courtType-detail.component";
-import { GET_COURT_TYPE } from "./components/courtType-detail/courtType-detail.graphql";
-import { GetCourtTypeDocument } from "../gql/graphql";
-import { deleteCustomersBulkAction } from "src/lib/customer/src/components/customer-list/customer-list-bulk-actions";
+import { GetCourtTypeDocument } from "./gql";
+import { deleteCourtTypeBulkAction } from "./components/courtType-list/courtType-list-bulk-actions";
 
 @NgModule({
   imports: [SharedModule, RouterModule.forChild([])],
@@ -38,7 +37,7 @@ export class CourtTypeModule {
     if (CourtTypeModule.hasRegisteredTabsAndBulkActions) {
       return;
     }
-    bulkActionRegistryService.registerBulkAction(deleteCustomersBulkAction);
+    bulkActionRegistryService.registerBulkAction(deleteCourtTypeBulkAction);
 
     pageService.registerPageTab({
       priority: 0,

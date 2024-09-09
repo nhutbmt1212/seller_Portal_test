@@ -6,4 +6,8 @@ export * from './components/courtType-list/courtType-list.component';
 export * from './components/courtType-list/courtType-list.graphql';
 export * from './courtType.module';
 export * from './courtType.routes';
+export * from './gql/fragment-masking';
+export * from './gql/gql';
+export * from './gql/graphql';
+export * from './gql/index';
 export * from './helpers/index';

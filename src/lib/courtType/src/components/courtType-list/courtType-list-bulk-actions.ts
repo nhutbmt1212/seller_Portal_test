@@ -16,7 +16,7 @@ import { map, switchMap } from "rxjs/operators";
 
 import { CourtTypeListComponent } from "./courtType-list.component";
 import { DELETE_COURT_TYPE } from "./courtType-list.graphql";
-import { GetAllCourtTypeQuery } from "src/lib/courtType/gql/graphql";
+import { GetAllCourtTypeQuery } from "src/lib/courtType/src/gql/graphql";
 
 export const deleteCourtTypeBulkAction: BulkAction<
   ItemOf<GetAllCourtTypeQuery, "getAllCourtType">,

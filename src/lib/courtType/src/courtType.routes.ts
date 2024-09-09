@@ -4,8 +4,6 @@ import { marker as _ } from "@biesbjerg/ngx-translate-extract-marker";
 
 import { CourtTypeListComponent } from "./components/courtType-list/courtType-list.component";
 import { CourtTypeDetailComponent } from "./components/courtType-detail/courtType-detail.component";
-import { ppid } from "process";
-import { link } from "fs";
 
 export const createRoutesCourtType = (pageService: PageService): Route[] => [
   {

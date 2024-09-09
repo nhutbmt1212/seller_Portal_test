@@ -21,13 +21,12 @@ import {
   GET_COURT_TYPE,
   UPDATE_COURT_TYPE,
 } from "./courtType-detail.graphql";
-import { slugify } from "src/lib/courtType/src/helpers";
 import {
   CreateCourtType,
   GetCourtTypeDocument,
-  GetCourtTypeQuery,
   UpdateCourtType,
-} from "src/lib/courtType/gql/graphql";
+} from "src/lib/courtType/src/gql/graphql";
+import { slugify } from "../../helpers";
 export interface SelectedAssets {
   assets?: Asset[];
   featuredAsset?: Asset;
