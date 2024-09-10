@@ -28,3 +28,9 @@ Codegen just generate code has extension file name like \*`test.graphql.ts`
 
 \!
 customize navbar at here: `base-nav.component.ts`
+
+\!
+customize locationId at here `component-registry-type.ts`
+
+\!
+customize build at here `build-public-api.js`
